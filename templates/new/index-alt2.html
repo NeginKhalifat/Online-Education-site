@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Easy Learning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Your page description here"/>
+    <meta name="author" content=""/>
+
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="../../static/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../../static/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <link href="../../static/css/flexslider.css" rel="stylesheet"/>
+    <link href="../../static/css/prettyPhoto.css" rel="stylesheet"/>
+    <link href="../../static/css/camera.css" rel="stylesheet"/>
+    <link href="../../static/css/jquery.bxslider.css" rel="stylesheet"/>
+    <link href="../../static/css/style.css" rel="stylesheet"/>
+
+    <!-- Theme skin -->
+    <link href="../../static/color/default.css" rel="stylesheet"/>
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="../../static/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="../../static/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../static/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="../../static/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="../../static/ico/favicon.png"/>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+
+    <!-- start header -->
+    <header>
+        <div class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="span6">
+                        <p class="topcontact"><i class="icon-phone"></i>
+                            {% if user.is_authenticated %}{{ user }}{% endif %}</p>
+                    </div>
+                    <div class="span6">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row nomargin">
+                <div class="span4">
+
+                </div>
+                <div class="span8">
+                    <div class="navbar navbar-static-top">
+                        <div class="navigation">
+                            <nav>
+                                <ul class="nav topnav">
+                                    {% if not  user.is_superuser %}
+                                        <li class="active">
+                                            <a class="elem" href="{% url 'class:todo_quiz_list' %}"><i
+                                                    class="icon-edit"></i> Todo </a>
+
+                                        </li>
+                                        <li>
+                                            <a class="elem" href="{% url 'class:class_list' %}"><i
+                                                    class="icon-edit"></i>
+                                                Class </a>
+
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'class:team_list' %}">My Team </a>
+
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'class:quiz_list' %}">Quiz</a>
+
+                                        </li>
+                                    {% endif %}
+                                    {% if user.is_superuser %}
+
+
+                                        <li>
+                                            <a class="elem" href="{% url 'class:list_team_admin' %}"><i
+                                            ></i> Team Management </a>
+
+                                        </li>
+                                        <li>
+                                            <a class="elem" href="{% url 'class:list_class_admin' %}"><i
+                                            ></i> Class Management </a>
+
+                                        </li>
+                                        <li>
+                                            <a class="elem" href="{% url 'class:list_user' %}"><i
+                                            ></i> User Management </a>
+
+                                        </li>
+
+                                    {% endif %}
+
+                                    {% if user.is_authenticated %}
+                                        <li>
+
+                                            <form class="logout_form" action="{% url 'accounts:logout' %}"
+                                                  method="post">
+                                                {% csrf_token %}
+                                                <button class="btn btn-small btn-secondary" type="submit">
+                                                    Logout
+                                                </button>
+
+                                            </form>
+                                        </li>
+
+                                    {% else %}
+                                        <li>
+                                            <button
+                                                    type="button" class="btn btn-small btn-theme"><a
+                                                    href="{% url 'accounts:login' %}">
+                                                Login
+                                            </a>
+                                            </button>
+                                        </li>
+<li >
+                                            <button
+                                                    type="button" class="btn btn-small "><a
+
+                                                    href="{% url 'accounts:signup' %}">
+                                                SignUp
+                                            </a>
+                                            </button>
+                                        </li>
+
+                                    {% endif %}
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- end navigation -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!-- end header -->
+
+    <!-- section featured -->
+    <section id="featured">
+
+        <!-- slideshow start here -->
+
+        <div class="camera_wrap" id="camera-slide">
+            <div data-src="../../static/img/slides/camera/slide2/img1.jpg">
+                <div class="camera_caption fadeFromLeft">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12 aligncenter">
+                                <h2 class="animated fadeInDown"><strong><span class="colored">Easy</span>
+                                    <span class="colored">Learning</span> </strong></h2>
+                                <p class="animated fadeInUp">You can enjoy your classes.</p>
+                                <img src="/static/img/slides/camera/slide3/browsers.png" alt=""
+                                     class="animated bounceInDown delay1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- slide 1 here -->
+            <div data-src="../../static/img/slides/camera/slide1/img1.jpg">
+                <div class="camera_caption fadeFromLeft">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span6">
+                                <h2 class="animated fadeInDown"><strong>Great site for <span
+                                        class="colored">Learning</span></strong>
+                                </h2>
+
+                            </div>
+                            <div class="span6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- slide 2 here -->
+
+
+            <!-- slide 3 here -->
+
+        </div>
+
+        <!-- slideshow end here -->
+
+    </section>
+    <!-- /section featured -->
+
+    <section id="content">
+        <div class="container">
+
+
+            <div class="row">
+
+                <div class="span3">
+                    <div class="service-box aligncenter flyLeft">
+                        <div class="icon">
+                            <i class="icon-circled icon-bgprimary icon-code icon-4x"></i>
+                        </div>
+                        <h5>Create <span class="colored">Your Team</span></h5>
+                        <p>
+                            You can create team for sharing experiences or delete your team.</p>
+
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="service-box aligncenter flyIn">
+                        <div class="icon">
+                            <i class="icon-circled icon-bgsuccess icon-cloud icon-4x"></i>
+                        </div>
+                        <h5>Create <span class="colored">Your Class</span></h5>
+                        <p>
+                            You can create Your class and invite your teams into it.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="service-box aligncenter flyIn">
+                        <div class="icon">
+                            <i class="icon-circled icon-bgdanger icon-mobile-phone icon-4x"></i>
+                        </div>
+                        <h5>Take a <span class="colored">Quiz</span></h5>
+                        <p>
+                            you can easily take quiz without any stress.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="service-box aligncenter flyRight">
+                        <div class="icon">
+                            <i class="icon-circled icon-bgwarning icon-envelope-alt icon-4x"></i>
+                        </div>
+                        <h5>See <span class="colored">Details and Result</span></h5>
+                        <p>
+                            You can see details of any classes and result of team's of your class.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="span12 aligncenter">
+                    <h3 class="title">Albert Einstein <strong>saying</strong></h3>
+                    <div class="blankline30"></div>
+
+                    <ul class="bxslider">
+                        <li>
+                            <blockquote>
+                                Insanity: doing the same thing over and over again and expecting different results.
+                            </blockquote>
+
+                        </li>
+                        <li>
+                            <blockquote>
+                                Imagination is more important than knowledge.
+                            </blockquote>
+
+                        </li>
+                        <li>
+                            <blockquote>
+                                Imagination is everything. It is the preview of life's coming attractions.
+                            </blockquote>
+
+                        </li>
+                        <li>
+                            <blockquote>
+                                Look deep into nature, and then you will understand everything better.
+                            </blockquote>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+        </footer>
+</div>
+
+<!-- javascript
+  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/jquery.easing.1.3.js"></script>
+<script src="../../static/js/bootstrap.js"></script>
+
+<script src="../../static/js/modernizr.custom.js"></script>
+<script src="../../static/js/toucheffects.js"></script>
+<script src="../../static/js/google-code-prettify/prettify.js"></script>
+<script src="../../static/js/jquery.bxslider.min.js"></script>
+<script src="../../static/js/camera/camera.js"></script>
+<script src="../../static/js/camera/setting.js"></script>
+
+<script src="../../static/js/jquery.prettyPhoto.js"></script>
+<script src="../../static/js/portfolio/jquery.quicksand.js"></script>
+<script src="../../static/js/portfolio/setting.js"></script>
+
+<script src="../../static/js/jquery.flexslider.js"></script>
+<script src="../../static/js/animate.js"></script>
+<script src="../../static/js/inview.js"></script>
+
+<!-- Template Custom JavaScript File -->
+<script src="../../static/js/custom.js"></script>
+
+
+</body>
+
+</html>
