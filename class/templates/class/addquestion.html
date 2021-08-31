@@ -1,0 +1,38 @@
+
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Class Register Form</div>
+        <div class="card-body">
+            <form method="post" role="form">
+                {% for field in forms.visible_fields %}
+                    <div id="div_{{ field.html_name }}"
+                         class="form-group{% if field.errors %} has-error{% endif %}">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        <div class="text-muted pull-right">
+                            <small>{{ field.help_text }}</small>
+                        </div>
+                        <div class="help-block">
+                            {{ field.errors }}
+
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for hidden in forms.hidden_fields %}
+                    {{ hidden }}
+
+                {% endfor %}
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="submit" value="add" class="btn btn-primary" name="add"/>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="done" class="btn btn-primary" name="done"/>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

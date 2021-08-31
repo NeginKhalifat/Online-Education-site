@@ -1,0 +1,5 @@
+django-bootstrap3-datetimepicker
+django== 3.0.8
+django-bootstrap-datepicker-plus
+
+django-bootstrap4

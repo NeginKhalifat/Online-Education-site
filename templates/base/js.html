@@ -1,28 +1,24 @@
-<script src="../../static/js/jquery.js"></script>
-  <script src="../../static/js/jquery.easing.1.3.js"></script>
-  <script src="../../static/js/bootstrap.js"></script>
+{% load static %}
 
-  <script src="../../static/js/modernizr.custom.js"></script>
-  <script src="../../static/js/toucheffects.js"></script>
-  <script src="../../static/js/google-code-prettify/prettify.js"></script>
-  <script src="../../static/js/jquery.bxslider.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<!-- Bootstrap and necessary plugins -->
+<script src="{% static 'dist/vendors/js/popper.min.js' %}"></script>
+<script src="{% static 'dist/vendors/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'dist/vendors/js/pace.min.js' %}"></script>
 
-  <script src="../../static/js/jquery.prettyPhoto.js"></script>
-  <script src="../../static/js/portfolio/jquery.quicksand.js"></script>
-  <script src="../../static/js/portfolio/setting.js"></script>
+<!-- Plugins and scripts required by all views -->
+<!--Chart JS is commented out due to console errors-->
+<!--<script src="{% static 'dist/vendors/js/Chart.min.js' %}"></script>-->
 
-  <script src="../../static/js/jquery.flexslider.js"></script>
-  <script src="../../static/js/animate.js"></script>
-  <script src="../../static/js/inview.js"></script>
+<!-- CoreUI main scripts -->
 
-  <!-- Template Custom JavaScript File -->
-  <script src="../../static/js/custom.js"></script>
-<script>
-{% block content_js %}
+<script src="{% static 'dist/js/app.js' %}"></script>
+
+<!-- Plugins and scripts required by this views -->
+
+<!-- Custom scripts required by this view -->
+<script src="{% static 'dist/js/views/main.js' %}"></script>
+<script src="{% static 'src/js/attendance.js' %}"></script>
+
+{% block script %}
 
 {% endblock %}
-
-</script>

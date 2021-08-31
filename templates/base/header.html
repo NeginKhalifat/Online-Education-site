@@ -1,44 +1,64 @@
+{% load static %}
 <head>
-  <meta charset="utf-8">
-  <title>Easy Learning</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your page description here" />
-  <meta name="author" content="" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Neging ">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="{% static 'src/img/favicon.png' %}">
+    <title>{% block title %}{% endblock %}</title>
 
-  <!-- css -->
-  <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <link href="../../static/css/bootstrap.css" rel="stylesheet" />
-  <link href="../../static/css/bootstrap-responsive.css" rel="stylesheet" />
-  <link href="../../static/css/flexslider.css" rel="stylesheet" />
-  <link href="../../static/css/prettyPhoto.css" rel="stylesheet" />
-  <link href="../../static/css/camera.css" rel="stylesheet" />
-  <link href="../../static/css/jquery.bxslider.css" rel="stylesheet" />
-  <link href="../../static/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
 <style>
-  form{
+   *{
+       font-size: 16px;!important;
+   }
+   div.container-fluid{
+        padding-right: 0;
+   }
+   div.card{
+       border-color: #00a67c;
+        border-width: 9px;
+       border-radius: 12px;
+       padding: 0 0px;
+   }
+header.app-header.navbar{
+    background-color: #33444c;
+}
+   input.btn-primary {
+       background-color: #33444c;
+   }
+    .main .container-fluid {!important;
 
-  }
+}
+    .main{background-color: white}
+    .container-fluid {!important;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
 </style>
-  <!-- Theme skin -->
-  <link href="../../static/color/default.css" rel="stylesheet" />
+    <!-- Icons -->
+    <link href="{% static 'dist/vendors/css/simple-line-icons.min.css' %}" rel="stylesheet">
 
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../static/ico/apple-touch-icon-144-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../static/ico/apple-touch-icon-114-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../static/ico/apple-touch-icon-72-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" href="../../static/ico/apple-touch-icon-57-precomposed.png" />
-  <link rel="shortcut icon" href="../../static/ico/favicon.png" />
-<style>
-    {% block style %}
+    <link href="{% static 'dist/vendors/css/font-awesome.min.css' %}" rel="stylesheet">
 
+    <!-- Main styles for this application -->
+    <link href="{% static 'dist/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'src/css/form.css' %}" rel="stylesheet">
+
+    {% block extrahead %}
     {% endblock %}
-</style>
-  <!-- =======================================================
-    Theme Name: Eterna
-    Theme URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>

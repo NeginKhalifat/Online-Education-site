@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+{% block style %}
+
+    .main .container-fluid {
+    padding: 0 0px;!important;
+    }
+{% endblock %}
+{% block content %}
+
+    <form action="." method="GET" class="search_form">
+        <input type="text" placeholder="Search..." name="q" class="search" value="{{ request.GET.q }}">
+        <input type="submit" value="Search" class="submit">
+    </form>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i>Class List
+        </div>
+        {% if students %}
+            <div class="card-body">
+                <table class="table table-responsive-sm">
+                    <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for cls in students %}
+                        <tr>
+                            <td>{{ cls.first_name }}</td>
+                            <td>{{ cls.last_name }}</td>
+                            <td>{{ cls.email }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="card-body">
+                <h3>No Class Register</h3>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

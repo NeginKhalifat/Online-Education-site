@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: django-bootstrap3-datetimepicker-2
+Version: 2.8.2
+Summary: Bootstrap3 compatible datetimepicker for Django projects.
+Home-page: https://github.com/samuelcolvin/django-bootstrap3-datetimepicker
+Author: Nakahara Kunihiko/Samuel Colvin
+Author-email: s@muelcolvin.com
+License: Apache License 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
