@@ -1,5 +1,5 @@
 django-bootstrap3-datetimepicker
-django== 3.0.8
+django==5.2.16
 django-bootstrap-datepicker-plus
 
 django-bootstrap4
